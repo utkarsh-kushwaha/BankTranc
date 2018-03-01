@@ -20,7 +20,7 @@ and open the template in the editor.
         <?php
         session_start();
         $id=$_SESSION['user1'];
-        $conn = new mysqli("xtreme.ceazc8sfrkye.ap-south-1.rds.amazonaws.com","root","kushwaha", "xtreme");
+        $conn = new mysqli("35.154.10.91","root","kushwaha", "xtreme");
         $total1=  $conn->query("SELECT `Toid`, `Fromid`, `amt` FROM `transfer` WHERE `Toid`='$id' or `Fromid`=$id");
 
           

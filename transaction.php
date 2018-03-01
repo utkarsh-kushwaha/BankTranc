@@ -42,7 +42,7 @@ and open the template in the editor.
             session_start();
             $i=$_SESSION['intamt'];
 
-            $conn = new mysqli("xtreme.ceazc8sfrkye.ap-south-1.rds.amazonaws.com","root","kushwaha", "xtreme");
+            $conn = new mysqli("35.154.10.91","root","kushwaha", "xtreme");
             $id=$_SESSION['user1'];
             $_SESSION['user']= $conn->query("SELECT ((((SELECT intbalans FROM user WHERE id ='$id') + 
 (SELECT COALESCE(SUM(amt),0) FROM  `totaltra` WHERE tratype =  'deposit' AND id ='$id') - 

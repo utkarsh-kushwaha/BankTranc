@@ -22,7 +22,7 @@ and open the template in the editor.
       
         
 	       $id=$_SESSION['user1'];
-            $conn = new mysqli("xtreme.ceazc8sfrkye.ap-south-1.rds.amazonaws.com","root","kushwaha", "xtreme");
+            $conn = new mysqli("35.154.10.91","root","kushwaha", "xtreme");
             $total=  $conn->query("SELECT `tratype`, `amt`, `id` FROM `totaltra` WHERE id='$id'");
 
           

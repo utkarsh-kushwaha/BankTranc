@@ -39,7 +39,7 @@ and open the template in the editor.
         {
             $aid=$_GET['text1'];
             $aamt=$_GET['text2'];
-            $conn = new mysqli("xtreme.ceazc8sfrkye.ap-south-1.rds.amazonaws.com","root","kushwaha", "xtreme");
+            $conn = new mysqli("35.154.10.91","root","kushwaha", "xtreme");
             //$x=mysql_query("SELECT ((SELECT intbalans FROM user WHERE id ='$id') + (SELECT COALESCE(SUM(amt),0) FROM  `totaltra` WHERE tratype =  'deposit' AND id ='$id') - ( SELECT COALESCE( SUM( amt ),0) FROM  `totaltra` WHERE tratype =  'withdraw' AND id ='$id' )) AS tbalance");
             $result = $conn->query("SELECT `id` FROM `user` WHERE id='$aid'");
             if(mysqli_num_rows($result) == 0) {

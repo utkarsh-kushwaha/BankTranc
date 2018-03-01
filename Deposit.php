@@ -21,7 +21,7 @@ and open the template in the editor.
 		    echo 'Your Balance :',$_SESSION['user'];
 
             $id=$_SESSION['user1'];
-            $conn = new mysqli("xtreme.ceazc8sfrkye.ap-south-1.rds.amazonaws.com","root","kushwaha", "xtreme");
+            $conn = new mysqli("35.154.10.91","root","kushwaha", "xtreme");
             
             if(isset($_GET['dps']))
             {
