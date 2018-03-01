@@ -2,33 +2,29 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
         <title></title>
     </head>
     <body><form action="index.php">
-        <table border="2" align="center">
-       
-        <tr style="background-color: red" align="center">
-            <th>
-            Registation Details
-            </th>
-        </tr>
-        <table border="2" align="center">
-        <tr style="background-color: red">
-            <td>
-            Username:
-            </td><td>
-        <input type="text" name="uname" value="" /><br></td></tr>
-        <tr style="background-color: red">
-        
-        <td> Password:</td>
-        <td>   <input type="password" name="psw" value="" /><br></td></tr>
-        <tr style="background-color: red">
-        
-        <td>Amount:</td>
-        <td><input type="text" name="amt" value="" /><br></td></tr>
-            <td> <input type="submit" value="Acc Open" name="act" />
-            </td><td><input type="button" value="Login" name="login" ONCLICK="window.location.href='login.php'"/>
-        </td> </form>
+  
+	  <div class="w3-card-4" style = "width: 40%; margin-left: auto; margin-right: auto;">
+	  <div class="w3-container"  align="center">
+		<h2  align="center">Registation Details</h2>
+		  <form class="w3-container" action="/action_page.php">
+				<p>      
+					<label class="w3-text-brown"><b>Username</b></label>
+					<input type="text" name="uname" value=""  class="w3-input w3-border"></p>
+				<p>      
+					<label class="w3-text-brown"><b>Password</b></label>
+					<input type="password" name="psw" value=""  class="w3-input w3-border"></p>
+				<p>      
+					<label class="w3-text-brown"><b>Amount</b></label>
+					<input type="text" name="amt" value="" class="w3-input w3-border" name="last" type="text"></p>
+				<input type="submit" value="Acc. Open." name="act" class="w3-btn w3-brown w3-padding"><br>
+					<button  name="login" ONCLICK="window.location.href='login.php'" class="w3-btn w3-brown w3-padding">Login</button></p>
+		  </form>
+	  </div>
+	</div>
     <?php
         if(isset($_GET['act']))
         {

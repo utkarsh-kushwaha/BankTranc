@@ -71,12 +71,20 @@ Fromid ='$id')) AS tbalance");
                  
                 $withdraamt=($_SESSION['user']-$_GET['text1']);
                 $enamt=$_GET['text1'];
+                if($enamt < 0) {
+                	echo "<script>alert('Please enter a positive amount');</script>";
+                	return;
+                }
+                else if($enamt > $tbalance) {
+               		echo "<script>alert('Sorry ! You don\'t have enough balance...');</script>";
+                	return;
+               	} 
                 $_SESSION['user'];
                 if($tbalance>=0)
                 {
-                 //$realwithdraamt=mysql_query("UPDATE user
-//SET amt='$withdraamt'
-//WHERE username='$user' and password='$pass';");
+                	//$realwithdraamt=mysql_query("UPDATE user
+					//SET amt='$withdraamt'
+					//WHERE username='$user' and password='$pass';");
                     $d='withdraw';
                     $conn->query("INSERT INTO `totaltra`(`id`, `tratype`, `amt`) VALUES ('$id','$d','$enamt')");
                     echo '<br>Your Initial balance:'.$i;

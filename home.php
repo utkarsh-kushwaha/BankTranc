@@ -5,6 +5,8 @@ and open the template in the editor.
 <!DOCTYPE html>
 <html>
     <head>
+     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+
         <style>  body {
         background-color: #d0e4fe;
     }
@@ -22,29 +24,29 @@ h2 {
 <body>
     
     <form action="home.php">
-        <input type="submit" value="Transaction" name="trn" />
-        <input type="button" value="Transfer Amount" name="home"ONCLICK="window.location.href='transfer.php' ""/>
-   
-        <input type="submit" value="All Transaction" name="trs" />
-        <input type="submit" value="All Transfer" name="tf" />
-        <input type="submit" value="demo" name="demo" />
-   
-   
-        <input type="button" value="Log-Out" name="home"ONCLICK="window.location.href='index.php' ""/>
-   
-        <h2>
-    
+    	<div class="w3-bar w3-border w3-card-4 w3-light-grey">
+		    <input class="w3-bar-item w3-button w3-padding-24" type="submit" value="Transaction" name="trn" />
+		    <input class="w3-bar-item w3-button w3-padding-24" type="button" value="Transfer Amount" name="home"ONCLICK="window.location.href='transfer.php' ""/>
+	   
+		    <input class="w3-bar-item w3-button w3-padding-24" type="submit" value="All Transaction" name="trs" />
+		    <input class="w3-bar-item w3-button w3-padding-24" type="submit" value="All Transfer" name="tf" />
+		    <input class="w3-bar-item w3-button w3-padding-24" type="submit" value="demo" name="demo" />
+	   
+		    <input class="w3-bar-item w3-button w3-padding-24" type="button" value="Log-Out" name="home"ONCLICK="window.location.href='index.php' ""/>
+	   </div>
+	   
+			    
     </form>
     <?php
         session_start();
-        $conn = new mysqli("35.154.10.91","root","kushwaha", "xtreme");
+            $conn = new mysqli("35.154.10.91","root","kushwaha", "xtreme");
         $id=$_SESSION['user1']; 
 
         $bb= $conn->query("SELECT  `intbalans` FROM `user` where id='$id'");
         while($row=  mysqli_fetch_array($bb))
         {
-            echo 'Your Initial Balance : ';
-            echo $row['intbalans'];
+            echo '<h2 class="" align="center">Your Initial Balance : ';
+            echo $row['intbalans'] + '</h2>';
         }
 
         $z= $conn->query("SELECT ((((SELECT intbalans FROM user WHERE id ='$id') + 
@@ -58,8 +60,8 @@ h2 {
         $row = mysqli_fetch_array($z);
         $tbalance=$row["tbalance"];
 		$_SESSION['z']=$row["tbalance"];
-            echo '<table border="2" align="center">';
-            echo "<td>Your Last balance is=".$tbalance;
+            echo '<h2 align="center">';
+            echo "Your Last balance is = ".$tbalance;
                 
         if(isset($_GET["trn"]))
         {

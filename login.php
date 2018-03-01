@@ -6,13 +6,31 @@ and open the template in the editor.
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+
         <title></title>
     </head>
     <body>
         <form action="login.php">
         
+
+	  <div class="w3-card-4" style = "width: 40%; margin-left: auto; margin-right: auto;">
+	  <div class="w3-container"  align="center">
+		<h2  align="center">Login Details</h2>
+		  <form class="w3-container" action="/action_page.php">
+				<p>      
+					<label class="w3-text-brown"><b>Username</b></label>
+					<input type="text" name="uname" value=""  class="w3-input w3-border"></p>
+				<p>      
+					<label class="w3-text-brown"><b>Password</b></label>
+					<input type="password" name="psw" value=""  class="w3-input w3-border"></p>
+				<input type="submit" value="Login" name="lgn" class="w3-brown w3-padding"><br>
+
+
+
         <table border="2" align="center">
        
+        <!--
         <tr style="background-color: red" align="center">
             <th>
             Login Details
@@ -29,7 +47,7 @@ and open the template in the editor.
         <td>
            <input type="submit" value="Login" name="lgn" />
            </td>
-          
+          -->
            
         </form>
         <?php
@@ -50,7 +68,7 @@ and open the template in the editor.
             }
             else
             {
-                $conn = new mysqli("35.154.10.91","root","kushwaha", "xtreme");
+            $conn = new mysqli("35.154.10.91","root","kushwaha", "xtreme");
 	
                 $user=$_GET['uname'];
                 $pass=$_GET['psw'];

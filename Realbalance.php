@@ -53,7 +53,7 @@ and open the template in the editor.
         </form>
         <?php
         session_start();
-        $conn = new mysqli("35.154.10.91","root","kushwaha", "xtreme");
+            $conn = new mysqli("35.154.10.91","root","kushwaha", "xtreme");
         $id = $_SESSION['user1'];
 
         //echo '<br>',$id;
